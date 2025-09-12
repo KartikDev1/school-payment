@@ -14,7 +14,7 @@ const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 app.use(cors());
-// capture raw body for webhook signature verification
+
 app.use(express.json({
   limit: '1mb',
   verify: (req, res, buf) => {
