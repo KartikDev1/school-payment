@@ -86,7 +86,7 @@ export default function Transactions() {
           <div className="mb-4 flex flex-col md:flex-row gap-4">
             {/* Search by Collect ID */}
             <Input
-              placeholder="Search by Collect ID..."
+              placeholder="Search by Order ID..."
               value={collectId}
               onChange={(e) => {
                 setCollectId(e.target.value);
