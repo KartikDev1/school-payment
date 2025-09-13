@@ -106,7 +106,7 @@ This application provides a robust solution for educational institutions to mana
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/KartikDev1/school-payment-dashboard.git
+   git clone https://github.com/KartikDev1/school-payment.git
    cd school-payment-dashboard
    ```
 
