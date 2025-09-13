@@ -17,6 +17,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@/components/ui/alert";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -24,6 +25,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login: authLogin } = useAuth(); // Move useAuth to top level
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,8 +33,9 @@ export default function Login() {
     setError("");
     try {
       const res = await API.post("/auth/login", { email, password });
-      localStorage.setItem("token", res.data.token); // save token
-      navigate("/"); // redirect to dashboard
+      authLogin(res.data.token);
+      
+      navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     } finally {

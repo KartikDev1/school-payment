@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "../components/ThemeToggle"
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function AppNavbar() {
      const { isAuthenticated, logout } = useAuth();
@@ -45,9 +45,11 @@ export default function AppNavbar() {
               </Link>
             </>
           ) : (
+            <Link to="/login">
             <Button size="sm" variant="destructive" onClick={logout}>
               Logout
             </Button>
+            </Link>
           )}
           <ThemeToggle />
         </div>
