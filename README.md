@@ -251,7 +251,7 @@ We welcome contributions! Please follow these guidelines:
 
 For support and questions:
 - Create an issue in the GitHub repository
-- Contact: [your-email@domain.com]
+- Contact: [raneeyy18@gmail.com]
 
 ## License
 
