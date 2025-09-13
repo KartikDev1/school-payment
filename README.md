@@ -258,8 +258,11 @@ For support and questions:
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
+<img width="1918" height="867" alt="image" src="https://github.com/user-attachments/assets/e3a38822-cb96-48f8-9841-311848354bdc" />
+
 
 **Developed by Kartik Rane** | © 2025 All Rights Reserved
+
 
 ![GitHub stars](https://img.shields.io/github/stars/your-username/school-payment-dashboard?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/your-username/school-payment-dashboard?style=social)
