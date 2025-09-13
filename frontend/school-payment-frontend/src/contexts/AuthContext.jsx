@@ -5,10 +5,12 @@ const AuthContext = createContext(undefined);
 
 export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true); // ⬅️ new
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     setIsAuthenticated(!!token);
+    setLoading(false); // ⬅️ done checking
   }, []);
 
   const login = (token) => {
@@ -21,11 +23,10 @@ export function AuthProvider({ children }) {
     setIsAuthenticated(false);
   };
 
-  const contextValue = useMemo(() => ({
-    isAuthenticated,
-    login,
-    logout
-  }), [isAuthenticated]);
+  const contextValue = useMemo(
+    () => ({ isAuthenticated, login, logout, loading }),
+    [isAuthenticated, loading]
+  );
 
   return (
     <AuthContext.Provider value={contextValue}>
@@ -36,11 +37,10 @@ export function AuthProvider({ children }) {
 
 export function useAuth() {
   const context = useContext(AuthContext);
-  
+
   if (context === undefined) {
     throw new Error("useAuth must be used within an AuthProvider");
   }
-  
+
   return context;
 }
-
